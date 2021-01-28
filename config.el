@@ -31,7 +31,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Projects/personal/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -57,3 +57,30 @@
 
 (setq-default scroll-margin 32)
 (setq-default tab-width 2)
+(setq
+        projectile-project-search-path '("~/Projects/abstract/" "~/Projects/school/" "~/Projects/personal")
+        org-ellipsis " ▾ "
+        org-superstar-headline-bullets-list '("⁖")
+        org-superstar-prettify-item-bullets nil
+)
+(after! org
+  (set-face-attribute 'org-level-1 nil
+                      :height 1.2
+                      :weight 'bold)
+  (set-face-attribute 'org-level-2 nil
+                      :height 1.15
+                      :weight 'bold)
+  (set-face-attribute 'org-level-3 nil
+                      :height 1.1
+                      :weight 'bold)
+  (set-face-attribute 'org-level-4 nil
+                      :height 1.05
+                      :weight 'bold)
+  (set-face-attribute 'org-level-5 nil
+                      :weight 'bold)
+  (set-face-attribute 'org-level-6 nil
+                      :weight 'bold)
+  (set-face-attribute 'org-document-title nil
+                      :height 1.75
+                      :weight 'bold)
+)
