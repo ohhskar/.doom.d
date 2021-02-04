@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Emotion JSX Pragma
+# key: jsx
+# uuid: jsx
+# --
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+import PropTypes from 'prop-types'
+
+// Style
+import * as style from './`(file-name-base buffer-file-name)`-styles'

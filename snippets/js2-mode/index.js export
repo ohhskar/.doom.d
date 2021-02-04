@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: index.js export
+# key: export
+# --
+export { ${1:default}  from '${0}'

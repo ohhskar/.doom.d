@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Emotion CSS String
+# key: css`
+# --
+export const $1 = ${2:(theme) => }css`

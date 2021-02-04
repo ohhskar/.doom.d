@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Function Component
+# key: func
+# uuid: func
+# --
+export default function $1(${2:{ $3 \}}){
+  return (
+    $0
+  )
+}

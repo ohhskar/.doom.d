@@ -1,0 +1,4 @@
+# key: css
+# name: Emotion CSS
+# --
+import css from '@emotion/css/macro'
