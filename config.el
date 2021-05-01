@@ -23,7 +23,7 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 (setq doom-font (font-spec :family "Iosevka Term" :size 18 :weight 'regular)
-       doom-variable-pitch-font (font-spec :family "Iosevka Term" :size 18))
+      doom-variable-pitch-font (font-spec :family "Iosevka Term" :size 18))
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -58,11 +58,11 @@
 (setq-default scroll-margin 32)
 (setq-default tab-width 2)
 (setq
-        projectile-project-search-path '("~/Projects/abstract/" "~/Projects/school/" "~/Projects/personal")
-        org-ellipsis " ▾ "
-        org-superstar-headline-bullets-list '("⁖")
-        org-superstar-prettify-item-bullets nil
-)
+ projectile-project-search-path '("~/Projects/abstract/" "~/Projects/school/" "~/Projects/personal")
+ org-ellipsis " ▾ "
+ org-superstar-headline-bullets-list '("⁖")
+ org-superstar-prettify-item-bullets nil
+ )
 (after! org
   (set-face-attribute 'org-level-1 nil
                       :height 1.2
@@ -83,4 +83,6 @@
   (set-face-attribute 'org-document-title nil
                       :height 1.75
                       :weight 'bold)
-)
+  )
+
+(setq-hook! 'web-mode-hook +format-with 'prettier)

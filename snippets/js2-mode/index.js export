@@ -2,4 +2,4 @@
 # name: index.js export
 # key: export
 # --
-export { ${1:default}  from '${0}'
+export { ${1:default} }  from '${0}'

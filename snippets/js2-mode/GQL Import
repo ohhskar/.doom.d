@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: GQL Import
+# key: gql
+# --
+import gql from 'graphql-tag'

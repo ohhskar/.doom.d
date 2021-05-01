@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Emotion JSX Pragma
+# key: jsx17
+# uuid: jsx17
+# --
+/** @jsxImportSource @emotion/react */ 
+import PropTypes from 'prop-types'
+
+// Style
+import * as style from './`(file-name-base buffer-file-name)`-styles'
