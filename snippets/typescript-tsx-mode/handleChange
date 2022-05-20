@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: handleChange
+# uuid: handleChange
+# key: handleChange
+# --
+const handleChange = (event: FormEvent<HTMLInputElement>): void => {
+  event.preventDefault();
+
+  $0
+};

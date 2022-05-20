@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: handleClick
+# uuid: handleClick
+# key: handleClick
+# --
+
+const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+  event.preventDefault();
+
+  $0
+};

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: image
+# uuid: image
+# key: image
+# --
+<picture>
+  <source srcset="{$1['1x_webp']}, {$1['2x_webp']} 2x" type="image/webp" />
+  <source srcset="{$1['1x']}, {$1['2x']} 2x" />
+  <img alt={$1.alt} class="header_$1" loading="lazy" src={$1['1x']} />
+</picture>

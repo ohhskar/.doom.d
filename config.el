@@ -22,8 +22,12 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "Iosevka Term" :size 18 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Iosevka Term" :size 18))
+(setq doom-font (font-spec :family "Terminus" :size 14 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Noto Serif" :size 12 :weight 'light)
+      doom-big-font (font-spec :family "Iosevka Term" :size 24 :weight 'regular)
+)
+(setq-default line-spacing 5)
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -36,7 +40,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -85,4 +88,13 @@
                       :weight 'bold)
   )
 
-(setq-hook! 'web-mode-hook +format-with 'prettier)
+(when (getenv "WAYLAND_DISPLAY")
+  (setq interprogram-paste-function
+        (lambda ()
+                (shell-command-to-string "wl-paste -n | tr -d '\r'"))))
+
+(setq-hook! 'web-mode-hook +format-with-lsp nil)
+(setq langtool-http-server-host "localhost"
+      langtool-http-server-port 8082)
+(setq langtool-default-language "en-US")
+(setq langtool-disabled-rules "WHITESPACE_RULE")

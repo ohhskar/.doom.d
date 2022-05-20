@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: classnames
+# uuid: classnames
+# key: cn
+# condition: t
+# --
+import cn from 'classnames'

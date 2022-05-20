@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: CSS Module Style
+# uuid: cssmod
+# key: cssmod
+# --
+
+// Styles
+import style from './`(file-name-base buffer-file-name)`.module.scss'

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: image-prop
+# uuid: image-prop
+# key: image-prop
+# --
+export let $1: {
+  '1x': string;
+  '2x': string;
+  '1x_webp': string;
+  '2x_webp': string;
+  alt: string;
+};

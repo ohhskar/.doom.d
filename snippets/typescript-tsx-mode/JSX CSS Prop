@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: JSX CSS Prop
+# key: css= 
+# --
+css={style.$0}

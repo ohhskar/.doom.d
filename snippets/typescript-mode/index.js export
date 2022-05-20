@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: index.js export
+# key: exd
+# --
+export { default } from '${0}'

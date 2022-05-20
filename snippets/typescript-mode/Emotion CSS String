@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Emotion CSS Object
+# key: css(
+# --
+export const $1 = ${2:(theme: Theme): SerializedStyles => }css({
+  $0
+}

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: Function Component
+# key: elp
+# uuid: function_component_with_props
+# --
+
+type $1Props = {
+  $3
+};
+
+export default function $1({ $2 \}: $1Props): JSX.Element{
+  return (
+    <$4>
+      $0
+    </$4>
+  )
+}

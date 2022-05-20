@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: flex-center
+# uuid: flex-center
+# key: flex-center
+# --
+
+display: flex;
+justify-content: center;
+align-items: center;

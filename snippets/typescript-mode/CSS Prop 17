@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: CSS Prop 17
+# key: css17
+# --
+import { css, Theme, SerializedStyles } from '@emotion/react'

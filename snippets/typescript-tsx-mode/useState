@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Oscar Valles
+# name: useState
+# key: useState
+# --
+const [${1:state}, set${1:$(s-upper-camel-case yas-text)}] = useState<${3:type}>(${2:initialState});
+$0
