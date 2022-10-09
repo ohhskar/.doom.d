@@ -22,9 +22,9 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "Terminus" :size 16 :weight 'regular)
+(setq doom-font (font-spec :family "Hack" :size 16 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Noto Serif" :size 12 :weight 'light)
-      doom-big-font (font-spec :family "Terminus" :size 32 :weight 'regular)
+      doom-big-font (font-spec :family "Hack" :size 32 :weight 'regular)
       )
 (setq-default line-spacing 5)
 
