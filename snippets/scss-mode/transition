@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: transition
+# uuid: transition
+# key: mt
+# --
+
+@include mixins.transition($1);

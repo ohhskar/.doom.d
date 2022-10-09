@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: breakpoint-up
+# uuid: breakpoint-up
+# key: mbu
+# --
+
+@include mixins.media-breakpoint-up($1){
+ $2
+}

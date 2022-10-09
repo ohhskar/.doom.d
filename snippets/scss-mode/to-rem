@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: to-rem
+# uuid: to-rem
+# key: mtr
+# --
+
+mixins.to-rem($1)

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: use-mixins
+# uuid: use-mixins
+# key: mu
+# --
+
+@use 'src/@common/styles/mixins.scss';

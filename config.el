@@ -22,10 +22,10 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "Terminus" :size 14 :weight 'regular)
+(setq doom-font (font-spec :family "Terminus" :size 16 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Noto Serif" :size 12 :weight 'light)
-      doom-big-font (font-spec :family "Iosevka Term" :size 24 :weight 'regular)
-)
+      doom-big-font (font-spec :family "Terminus" :size 32 :weight 'regular)
+      )
 (setq-default line-spacing 5)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -61,7 +61,7 @@
 (setq-default scroll-margin 32)
 (setq-default tab-width 2)
 (setq
- projectile-project-search-path '("~/Projects/abstract/" "~/Projects/school/" "~/Projects/personal")
+ projectile-project-search-path '(("~/Projects/" . 2))
  org-ellipsis " ▾ "
  org-superstar-headline-bullets-list '("⁖")
  org-superstar-prettify-item-bullets nil
@@ -88,13 +88,39 @@
                       :weight 'bold)
   )
 
-(when (getenv "WAYLAND_DISPLAY")
-  (setq interprogram-paste-function
-        (lambda ()
-                (shell-command-to-string "wl-paste -n | tr -d '\r'"))))
-
 (setq-hook! 'web-mode-hook +format-with-lsp nil)
+(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+(setq-hook! 'typescript-tsx-mode-hook +format-with-lsp nil)
+
 (setq langtool-http-server-host "localhost"
       langtool-http-server-port 8082)
 (setq langtool-default-language "en-US")
 (setq langtool-disabled-rules "WHITESPACE_RULE")
+
+(use-package! evil-colemak-basics
+  :after evil evil-snipe
+  :init
+  (setq evil-colemak-basics-layout-mod `mod-dh) ; Swap "h" and "m"
+  (setq evil-colemak-basics-char-jump-commands 'evil-snipe)
+  :config
+  (global-evil-colemak-basics-mode) ; Enable colemak rebinds
+  )
+(after! evil
+
+  (map! :map evil-window-map
+        (:leader
+         (:prefix ("w" . "Select Window")
+          :n :desc "Left"  "m" 'evil-window-left
+          :n :desc "Up"    "e" 'evil-window-up
+          :n :desc "Down"  "n" 'evil-window-down
+          :n :desc "Right" "i" 'evil-window-right
+          ))
+        ))
+
+(setq lsp-eslint-auto-fix-on-save t)
+(defun lsp--eslint-before-save (orig-fun)
+  "Run lsp-eslint-apply-all-fixes and then run the original lsp--before-save."
+  (when lsp-eslint-auto-fix-on-save (lsp-eslint-apply-all-fixes))
+  (funcall orig-fun))
+
+(advice-add 'lsp--before-save :around #'lsp--eslint-before-save)

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: classNameClassNames
+# uuid: classNameClassNames
+# key: cncn
+# --
+
+className={cn($1)}
